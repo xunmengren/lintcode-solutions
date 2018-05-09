@@ -1,0 +1,21 @@
+class Solution {
+public:
+    /**
+     * @param str: An array of char
+     * @param offset: An integer
+     * @return: nothing
+     */
+    void rotateString(string &str, int offset) {
+        // write your code here
+        int i = 1;
+        int k = str.length();
+        if (k != 0)
+            offset %= k;
+        offset = k - offset;
+        while (i++ <= offset && k >=2 ){
+            char temp = str[0];
+            str = str.substr(1,k-1);
+            str.push_back(temp);
+        }
+    }
+};
